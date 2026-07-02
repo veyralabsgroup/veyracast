@@ -1,0 +1,12 @@
+**/node_modules
+**/build
+**/dist
+.git
+.github
+*.log
+.env
+.env.*
+!.env.example
+Guides
+__tests__
+**/*.test.ts

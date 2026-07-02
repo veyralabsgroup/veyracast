@@ -6,6 +6,21 @@ Built and maintained by [VeyraLabs](https://github.com/veyralabsgroup). A hard f
 
 > ⚠️ **Instagram note.** The legacy stealth-browser Instagram path is retained only as an explicit opt-in (`IG_MODE=stealth`) and is **off by default** — it violates Meta's ToS and risks account bans. The default IG path targets the official Instagram Graph API for business/creator accounts.
 
+## Run with Docker
+
+The fastest way to run the whole stack (API + PostgreSQL):
+
+```sh
+cp .env.example .env      # add your ANTHROPIC_API_KEY, and set JWT_SECRET / SESSION_SECRET
+docker compose up
+```
+
+The API comes up on `http://localhost:3000` and the dashboard on `http://localhost:3000/dashboard`. PostgreSQL runs alongside it and the schema is applied on startup.
+
+The image skips the headless-browser download by default (the official-API path doesn't need it). To use the stealth Instagram mode (`IG_MODE=stealth`), build with a Chrome-enabled base image.
+
+> The compose file ships throwaway dev values for `JWT_SECRET` and `SESSION_SECRET` so it boots out of the box. **Set real values in `.env` before exposing it to anyone.**
+
 ## Content engine (multi-provider)
 
 The agent generates schema-constrained JSON via a pluggable provider. Select with `AI_PROVIDER`:
@@ -220,8 +235,6 @@ actions, application logs, and errors.
 - `Guides/Training.md`
 - `Guides/FAQ.md`
 - `Guides/Logging.md`
-
-## reCAPTCHA Model Integration
 
 ## Configuration Reference
 

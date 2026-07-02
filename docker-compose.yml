@@ -1,4 +1,26 @@
 services:
+  api:
+    build: .
+    container_name: veyracast-api
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      DATABASE_URL: postgresql://postgres:postgres@postgres:5432/veyracast_ai_agent
+      DB_REQUIRED: 'true'
+      # Dev defaults so the stack boots out of the box. CHANGE THESE for any
+      # public/production deployment — set JWT_SECRET and SESSION_SECRET in .env.
+      JWT_SECRET: ${JWT_SECRET:-change_me_dev_only}
+      SESSION_SECRET: ${SESSION_SECRET:-change_me_dev_only}
+    ports:
+      - '3000:3000'
+    depends_on:
+      postgres:
+        condition: service_healthy
+    restart: unless-stopped
+
   postgres:
     image: postgres:16-alpine
     container_name: veyracast-postgres
