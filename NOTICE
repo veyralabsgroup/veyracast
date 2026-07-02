@@ -1,0 +1,14 @@
+VeyraCast
+Copyright (c) 2026 VeyraLabs
+
+This product is a derivative work of Riona-AI-Agent
+(https://github.com/David-patrick-chuks/Riona-AI-Agent),
+Copyright (c) David-patrick-chuks, licensed under the MIT License.
+
+Substantial modifications by VeyraLabs, including:
+  - Re-centering on official-API publishing (Instagram stealth automation
+    demoted to an off-by-default opt-in)
+  - A pluggable multi-provider content engine defaulting to Claude
+  - Removal of the reCAPTCHA ML subproject and unrelated project assets
+
+The original MIT License terms are retained in LICENSE and continue to apply.

@@ -1,0 +1,41 @@
+{
+  "name": "veyracast",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VeyraCast — API-first AI social content agent (X, Instagram Graph, LinkedIn, Bluesky)",
+  "packageManager": "pnpm@9.15.9",
+  "scripts": {
+    "dev": "pnpm --filter @veyracast/api dev",
+    "dev:api": "pnpm --filter @veyracast/api dev",
+    "dev:all": "pnpm -r --parallel dev",
+    "start": "pnpm --filter @veyracast/api start",
+    "build": "pnpm -r build",
+    "test": "pnpm --filter @veyracast/api test",
+    "test:coverage": "pnpm --filter @veyracast/api test:coverage",
+    "lint": "pnpm --filter @veyracast/api lint",
+    "lint:fix": "pnpm --filter @veyracast/api lint:fix",
+    "typecheck": "pnpm -r typecheck",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm format:check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check:env": "pnpm --filter @veyracast/api check:env",
+    "setup": "pnpm --filter @veyracast/api setup",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @veyracast/api db:migrate",
+    "train:link": "pnpm --filter @veyracast/api train:link",
+    "train:audio": "pnpm --filter @veyracast/api train:audio",
+    "train:youtube": "pnpm --filter @veyracast/api train:youtube",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@typescript-eslint/eslint-plugin": "^8.62.0",
+    "@typescript-eslint/parser": "^8.62.0",
+    "eslint": "^10.6.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "prettier": "^3.8.5",
+    "typescript-eslint": "^8.62.0"
+  }
+}
