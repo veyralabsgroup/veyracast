@@ -39,8 +39,8 @@ Riona-AI-Agent/
 
 ## Packages
 
-| Package            | Path                | Purpose                                                |
-| ------------------ | ------------------- | ------------------------------------------------------ |
+| Package                | Path                | Purpose                                                |
+| ---------------------- | ------------------- | ------------------------------------------------------ |
 | `veyracast`            | `.`                 | Workspace root — `pnpm dev`, `pnpm check`, `pnpm db:*` |
 | `@veyracast/api`       | `apps/api`          | Instagram/X automation, REST API, admin dashboard      |
 | `@veyracast/recaptcha` | `apps/recaptcha`    | TensorFlow reCAPTCHA classifier & solver service       |

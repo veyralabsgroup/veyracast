@@ -3,8 +3,8 @@ import type { InstagramCommentSchema } from '../schema';
 // Our schemas use Gemini's dialect (`nullable`, open objects). Anthropic wants
 // standard JSON Schema: no `nullable`, objects closed with additionalProperties.
 export function toStrictJsonSchema(schema: InstagramCommentSchema): Record<string, unknown> {
-  const { nullable, ...rest } = schema as Record<string, unknown> & { nullable?: boolean };
-  const out: Record<string, unknown> = { ...rest };
+  const out: Record<string, unknown> = { ...(schema as Record<string, unknown>) };
+  delete out.nullable;
 
   if (schema.type === 'object' && schema.properties) {
     const props: Record<string, unknown> = {};

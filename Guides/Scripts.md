@@ -6,8 +6,8 @@ All commands run from the **repo root** unless noted.
 
 | Script                                              | Description                                 |
 | --------------------------------------------------- | ------------------------------------------- |
-| `pnpm dev` / `pnpm dev:api`                         | Run `@veyracast/api` in dev mode                |
-| `pnpm dev:recaptcha`                                | Run `@veyracast/recaptcha` dev server           |
+| `pnpm dev` / `pnpm dev:api`                         | Run `@veyracast/api` in dev mode            |
+| `pnpm dev:recaptcha`                                | Run `@veyracast/recaptcha` dev server       |
 | `pnpm dev:all`                                      | Run all workspace `dev` scripts in parallel |
 | `pnpm start`                                        | Build + run API server                      |
 | `pnpm build`                                        | Build all packages                          |

@@ -10,21 +10,13 @@ Built and maintained by [VeyraLabs](https://github.com/veyralabsgroup). A hard f
 
 The agent generates schema-constrained JSON via a pluggable provider. Select with `AI_PROVIDER`:
 
-| `AI_PROVIDER` | Backend | Notes |
-|---|---|---|
-| `anthropic` (default) | Claude | Structured outputs (`output_config.format`); model via `ANTHROPIC_MODEL` (default `claude-opus-4-8`) |
-| `gemini` | Gemini | Original behavior: JSON mode + API-key rotation |
+| `AI_PROVIDER`         | Backend | Notes                                                                                                |
+| --------------------- | ------- | ---------------------------------------------------------------------------------------------------- |
+| `anthropic` (default) | Claude  | Structured outputs (`output_config.format`); model via `ANTHROPIC_MODEL` (default `claude-opus-4-8`) |
+| `gemini`              | Gemini  | Original behavior: JSON mode + API-key rotation                                                      |
 
 Set `ANTHROPIC_API_KEY` (and optionally `ANTHROPIC_MODEL`) for the default provider.
 
-## Training Inputs
-
-Before running automation, you can shape the agent with:
-
-- YouTube video URLs
-- Audio files
-- Portfolio or website links
-- Documents and text files including PDF, DOC, DOCX, and TXT
 ## Training Inputs
 
 Before running automation, you can shape the agent with:
@@ -71,17 +63,16 @@ pnpm install
 
 ## Monorepo
 
-This repository is a **pnpm workspace** with two apps and shared tooling:
+This repository is a **pnpm workspace** with one app and shared tooling:
 
-| Package            | Path                 | Description                                 |
-| ------------------ | -------------------- | ------------------------------------------- |
-| `@veyracast/api`       | `apps/api/`          | Main API, Instagram/X automation, dashboard |
-| `@veyracast/tsconfig`  | `packages/tsconfig/` | Shared TypeScript config                    |
+| Package               | Path                 | Description                                 |
+| --------------------- | -------------------- | ------------------------------------------- |
+| `@veyracast/api`      | `apps/api/`          | Main API, Instagram/X automation, dashboard |
+| `@veyracast/tsconfig` | `packages/tsconfig/` | Shared TypeScript config                    |
 
 ```sh
-pnpm install              # install all workspace deps
-pnpm dev                  # run API (@veyracast/api)
-pnpm dev:all              # run both in parallel
+pnpm install                            # install all workspace deps
+pnpm dev                                # run API (@veyracast/api)
 pnpm --filter @veyracast/api <script>   # run any API script
 ```
 
@@ -212,10 +203,9 @@ actions, application logs, and errors.
 | `pnpm format`        | Prettier write                               |
 | `pnpm check:env`     | Validate required env vars                   |
 | `pnpm setup`         | Setup health check                           |
-| `pnpm dev`           | API dev server (`@veyracast/api`)                |
+| `pnpm dev`           | API dev server (`@veyracast/api`)            |
 | `pnpm dev:all`       | All apps in parallel                         |
 | `pnpm build`         | Build all packages                           |
-
 
 ## Guides
 
@@ -232,9 +222,6 @@ actions, application logs, and errors.
 - `Guides/Logging.md`
 
 ## reCAPTCHA Model Integration
-
-
-
 
 ## Configuration Reference
 
@@ -349,7 +336,6 @@ This project is licensed under the MIT License. See the LICENSE file for details
 ## Stargazers
 
 Thank you to all our supporters!
-
 
 ## Community & Contact
 

@@ -33,7 +33,9 @@ export class AnthropicProvider implements AIProvider {
     });
 
     if (response.stop_reason === 'refusal') {
-      logger.error(`Anthropic declined the request (${response.stop_details?.category ?? 'unknown'}).`);
+      logger.error(
+        `Anthropic declined the request (${response.stop_details?.category ?? 'unknown'}).`,
+      );
       return 'Service unavailable!';
     }
 

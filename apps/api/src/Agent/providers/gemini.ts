@@ -20,7 +20,7 @@ async function runGemini(
   prompt: string,
   apiKeyIndex: number = 0,
   triedKeys: Set<number> = new Set(),
-): Promise<unknown> {
+): Promise<any> {
   const geminiApiKey = geminiApiKeys[apiKeyIndex];
 
   if (!geminiApiKey) {
