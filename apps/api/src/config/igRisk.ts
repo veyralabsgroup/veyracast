@@ -6,12 +6,13 @@ export type IgRiskState = {
   events: Array<{ at: string; reason: string }>;
 };
 
-const RISK_PATH = path.join(__dirname, '../data/igRiskState.json');
+const riskPath = (): string =>
+  process.env.IG_RISK_STATE_PATH || path.join(__dirname, '../data/igRiskState.json');
 const PROFILE_ORDER: IgProfile['name'][] = ['safe', 'standard', 'aggressive'];
 
 const readState = async (): Promise<IgRiskState> => {
   try {
-    const raw = await fs.readFile(RISK_PATH, 'utf-8');
+    const raw = await fs.readFile(riskPath(), 'utf-8');
     const parsed = JSON.parse(raw) as IgRiskState;
     return { events: Array.isArray(parsed.events) ? parsed.events : [] };
   } catch {
@@ -20,8 +21,8 @@ const readState = async (): Promise<IgRiskState> => {
 };
 
 const writeState = async (state: IgRiskState): Promise<void> => {
-  await fs.mkdir(path.dirname(RISK_PATH), { recursive: true });
-  await fs.writeFile(RISK_PATH, JSON.stringify(state, null, 2));
+  await fs.mkdir(path.dirname(riskPath()), { recursive: true });
+  await fs.writeFile(riskPath(), JSON.stringify(state, null, 2));
 };
 
 /** Challenge events in the last 24 hours */
@@ -70,7 +71,7 @@ export const getIgRiskSummary = async (
 /** Reset risk state (tests) */
 export const resetIgRiskState = async (): Promise<void> => {
   try {
-    await fs.unlink(RISK_PATH);
+    await fs.unlink(riskPath());
   } catch {
     // ignore
   }

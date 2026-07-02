@@ -48,7 +48,7 @@ describe('igRisk', () => {
   test('prunes events older than 24 hours from challenge count', async () => {
     const fs = await import('fs/promises');
     const path = await import('path');
-    const riskPath = path.join(__dirname, '../data/igRiskState.json');
+    const riskPath = process.env.IG_RISK_STATE_PATH as string;
     await fs.mkdir(path.dirname(riskPath), { recursive: true });
     await fs.writeFile(
       riskPath,
