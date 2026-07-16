@@ -22,7 +22,7 @@
     "db:migrate": "node scripts/migrate.js"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.109.1",
+    "@anthropic-ai/sdk": "^0.112.1",
     "@google/genai": "^1.52.0",
     "axios": "^1.18.1",
     "cookie-parser": "^1.4.7",
@@ -30,19 +30,19 @@
     "cors": "^2.8.6",
     "cron": "^4.4.0",
     "csv-parser": "^3.2.1",
-    "dompurify": "^3.4.11",
+    "dompurify": "^3.4.12",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
-    "helmet": "^8.2.0",
+    "helmet": "^8.3.0",
     "instagram-private-api": "^1.46.1",
     "jsdom": "^29.1.1",
     "jsonwebtoken": "^9.0.3",
     "mammoth": "^1.12.0",
     "moment": "^2.30.1",
     "multer": "^2.2.0",
-    "node-cron": "^4.5.0",
-    "openai": "^6.45.0",
+    "node-cron": "^4.6.0",
+    "openai": "^6.47.0",
     "pdf-parse": "^2.4.5",
     "pg": "^8.22.0",
     "playwright": "^1.61.1",
@@ -58,7 +58,7 @@
     "socket.io": "^4.8.3",
     "textract": "^2.5.0",
     "twitter-api-v2": "^1.29.0",
-    "user-agents": "^2.1.104",
+    "user-agents": "^2.1.123",
     "winston": "^3.19.0",
     "winston-daily-rotate-file": "^5.0.0",
     "youtube-transcript": "^1.3.1"
@@ -75,7 +75,7 @@
     "@types/jsonwebtoken": "^9.0.10",
     "@types/mime-types": "^3.0.1",
     "@types/multer": "^2.1.0",
-    "@types/node": "^26.0.1",
+    "@types/node": "^26.1.1",
     "@types/pdf-parse": "^1.1.5",
     "@types/pg": "^8.20.0",
     "@types/readline-sync": "^1.4.8",
@@ -83,7 +83,7 @@
     "@types/request-promise": "^4.1.51",
     "@types/textract": "^2.4.5",
     "@types/user-agents": "^1.0.4",
-    "eslint": "^10.6.0",
+    "eslint": "^10.7.0",
     "eslint-config-prettier": "^10.1.8",
     "jest": "^30.4.2",
     "nodemon": "^3.1.14",
@@ -92,6 +92,6 @@
     "ts-jest": "^29.4.11",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.62.0"
+    "typescript-eslint": "^8.64.0"
   }
 }
